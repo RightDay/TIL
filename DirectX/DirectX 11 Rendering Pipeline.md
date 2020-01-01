@@ -4,7 +4,7 @@
 
 3D 세계에 대한 기하학적 표현과 이 세계를 바라보는 관점을 정의하는 가상 카메라를 이용해 2D 이미지를 만들어내는 과정이다.
 
-![Rendering Pipeline](/image/DirectX-11-Rendering-Pipeline.png)
+![Rendering_Pipeline](./image/DirectX-11-Rendering-Pipeline.png)
 
 
 
