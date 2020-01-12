@@ -90,7 +90,7 @@
 
   * **크기가 같은** 두 행렬에 대하여, **각 상응하는 원소의 차**를 구한다.
 
-  * 두 행렬의 차를 구하는 예제 코드(4×4행렬의 합)
+  * 두 행렬의 차를 구하는 예제 코드(4×4행렬의 차)
 
     ```cpp
     Matrix4X4 subtractMatrics(Matrix4X4 a, Matrix4X4 b)
@@ -110,7 +110,34 @@
 
 
 
-## 행렬의 스칼라 곱
+## 행렬의 스칼라 곱 / 행렬의 곱
+
+* ### 행렬의 스칼라 곱
+
+  * 행렬의 **각 원소**에 스칼라 값을 곱한다.
+  * 행렬에 스칼라를 곱하는 예제 코드(3×3행렬에 스칼라 곱)
+
+  ```cpp
+  Matrix3X3 scalarMultiply(Matrix3X3 a, float scale)
+  {
+      Matrix3X3 temp;
+      
+      for (int i = 0; i < 3; i++)
+      {
+          for (int j = 0; j < 3; j++)
+          {
+              temp.index[i][j] = (a.index[i][j] * scale);
+          }
+  	}
+      return temp;
+  }
+  ```
+
+
+
+* ### 행렬의 곱
+
+  * 
 
 
 
