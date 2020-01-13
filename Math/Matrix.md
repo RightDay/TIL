@@ -77,13 +77,13 @@
     Matrix3X3 addMatrics(Matrix3X3 a, Matrix3X3 b)
     {
         Matrix3X3 temp;
-        for (int i = 0; i < 3; i++)
+        for(int i = 0; i < 3; i++)
         {
-            for (int j = 0; j < 3; j++)
+            for(int j = 0; j < 3; j++)
             {
                 temp.index[i][j] = (a.index[i][j] + b.index[i][j]);
     		}
-    	}
+        }
         return temp;
     }
     ```
@@ -99,13 +99,13 @@
     {
         Matrix4X4 temp;
         
-        for (int i = 0; i < 4; i++)
+        for(int i = 0; i < 4; i++)
         {
-            for (int j = 0; j < 4; j++)
+            for(int j = 0; j < 4; j++)
             {
                 temp.index[i][j] = (a.index[i][j] - b.index[i][j]);
             }
-    	}
+        }
         return temp;
     }
     ```
@@ -131,7 +131,7 @@
 	          {
 	              temp.index[i][j] = (a.index[i][j] * scale);
 	          }
-	  	}
+	      }
 	      return temp;
 	  }
 	  ```
@@ -163,7 +163,7 @@
   
   * 두 행렬의 곱에 대한 예제 코드(3X3행렬)
   
-    ```c
+    ```cpp
     Matrix3X3 multiply3X3Matrices(Matrix3X3 a, Matrix3X3 b)
     {
         Matrix3X3 temp = createFixed3X3Matrix(0);
@@ -175,9 +175,11 @@
                 for(int k = 0; k < 3; k++)
                 {
                     temp.index[i][j] += (a.index[i][j] * b.index[k][j]);
-    			}
+                }
             }
         }
         return temp;
     }
     ```
+    
+    
