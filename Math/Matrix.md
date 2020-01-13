@@ -110,40 +110,72 @@
 
 
 
-## 행렬의 스칼라 곱 / 행렬의 곱
+## 행렬의 스칼라 곱 / 행렬과 행렬의 곱
 
 * ### 행렬의 스칼라 곱
 
   * 행렬의 **각 원소**에 스칼라 값을 곱한다.
-  * 행렬에 스칼라를 곱하는 예제 코드(3×3행렬에 스칼라 곱)
-
-  ```cpp
-  Matrix3X3 scalarMultiply(Matrix3X3 a, float scale)
-  {
-      Matrix3X3 temp;
-      
-      for (int i = 0; i < 3; i++)
-      {
-          for (int j = 0; j < 3; j++)
-          {
-              temp.index[i][j] = (a.index[i][j] * scale);
-          }
-  	}
-      return temp;
-  }
-  ```
-
-
-
-* ### 행렬의 곱
-
-  * 
+  
+	* 행렬에 스칼라를 곱하는 예제 코드(3×3행렬에 스칼라 곱)
+	
+	  ```cpp
+	  Matrix3X3 scalarMultiply(Matrix3X3 a, float scale)
+	  {
+	      Matrix3X3 temp;
+	      
+	      for (int i = 0; i < 3; i++)
+	      {
+	          for (int j = 0; j < 3; j++)
+	          {
+	              temp.index[i][j] = (a.index[i][j] * scale);
+	          }
+	  	}
+	      return temp;
+	  }
+	  ```
+	
+	  
+	
 
 
+* ### 행렬과 행렬의 곱
 
-## 행렬식
-
-
-
-## 역행렬
-
+  
+  * 행렬과 행렬간의 곱셈은 **첫 번째 행렬의 행**과 **두 번째 행렬의 열**과의 **내적**이다.
+  
+  
+    * 예) 두 2X2 행렬의 곱
+  
+      임의의 두 행렬 A = ![matrix_a](./image/matrix_a.png) B = ![matrix_b](./image/matrix_b.png)에 대하여
+  
+      AB = ![matrix_ab](./image/matrix_ab.png)
+  
+  * 행렬 곱 AB에 대하여 **행렬 A의 열의 수**와 **행렬 B의 행의 수가 같아야 한다.**
+  
+  * 행렬 곱 AB의 크기는 **행렬 A의 행과 행렬 B의 열의 개수를 가진다.**
+  
+  * 행렬의 곱은 **교환법칙이 성립하지 않는다.**
+  
+  
+    * 임의의 크기를 갖는 두 행렬 A, B에 대하여 **AB != BA**
+  
+  * 두 행렬의 곱에 대한 예제 코드(3X3행렬)
+  
+    ```c
+    Matrix3X3 multiply3X3Matrices(Matrix3X3 a, Matrix3X3 b)
+    {
+        Matrix3X3 temp = createFixed3X3Matrix(0);
+        
+        for(int i = 0; i < 3; i++)
+        {
+            for(int j = 0; j < 3; j++)
+            {
+                for(int k = 0; k < 3; k++)
+                {
+                    temp.index[i][j] += (a.index[i][j] * b.index[k][j]);
+    			}
+            }
+        }
+        return temp;
+    }
+    ```
