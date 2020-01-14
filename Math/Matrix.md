@@ -112,7 +112,7 @@
 
 
 
-## 행렬의 스칼라 곱 / 행렬과 행렬의 곱
+## 행렬의 곱
 
 * ### 행렬의 스칼라 곱
 
@@ -161,7 +161,7 @@
   
     * 임의의 크기를 갖는 두 행렬 A, B에 대하여 **AB != BA**
   
-  * 두 행렬의 곱에 대한 예제 코드(3X3행렬)
+  * 두 행렬의 곱에 대한 예제 코드(3×3행렬)
   
     ```cpp
     Matrix3X3 multiply3X3Matrices(Matrix3X3 a, Matrix3X3 b)
@@ -182,4 +182,11 @@
     }
     ```
     
-    
+
+
+
+* ### 벡터와 행렬의 곱
+
+  * 벡터와 행렬의 곱은 **1×3 행벡터와 3×3 행렬의 곱셈**을 한 것과 같다.
+  * 임의의 벡터 v = ![vector_xyz](./image/vector_xyz.png)와 행렬 A = ![matrix3x3](./image/matrix3x3.png)는 **선형결합(Linear Combination)**을 통해 다음과 같이 나타낼 수 있다.
+    * ![LinearCombination](./image/LinearCombination.png)
