@@ -188,5 +188,5 @@
 * ### 벡터와 행렬의 곱
 
   * 벡터와 행렬의 곱은 **1×3 행벡터와 3×3 행렬의 곱셈**을 한 것과 같다.
-  * 임의의 벡터 v = ![vector_xyz](./image/vector_xyz.png)와 행렬 A = ![matrix3x3](./image/matrix3x3.png)는 **선형결합(Linear Combination)**을 통해 다음과 같이 나타낼 수 있다.
+  * 임의의 벡터 v = ![vector_xyz](./image/Vector_xyz.png)와 행렬 A = ![matrix3x3](./image/Matrix3x3.png)는 **선형결합(Linear Combination)**을 통해 다음과 같이 나타낼 수 있다.
     * ![LinearCombination](./image/LinearCombination.png)
