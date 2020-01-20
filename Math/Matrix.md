@@ -196,10 +196,9 @@
 ## 행렬식(Determinant)
 
 * 정방행렬에 실수를 대응 시키는 함수이다.
-
-
+* 행렬의 역을 구할때 사용된다.
 
 * ### 소행렬식
 
   * 임의의 행렬 A에서 i번째 행과 j번째 열을 제거 시켜 구성되는 (n-1)차 정방행렬
-    * 
+    * ![matrix_determin1](./image/matrix_determin1.png)인 행렬에서 원소 a_11의 소행렬식은 ![matrix_determin2](./image/matrix_determin2.png)이다.
