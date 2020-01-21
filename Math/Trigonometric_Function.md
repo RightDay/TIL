@@ -13,7 +13,7 @@
     ![](./image/Trigonometric_Function/radian.png)
   * 각의 크기를 재는 SI 단위이다. 
   * 기호로는 rad(라디안)을 사용한다. 이를 **호도법**이라고 한다.
-  * 부채꼴에서 호의 길이를 l, 반지름의 길이를 r이라고 하면 중심각의 크기 θ는 ![Radian Formula](./image/radian_formula.png)로 정의한다.
+  * 부채꼴에서 호의 길이를 l, 반지름의 길이를 r이라고 하면 중심각의 크기 θ는 ![Radian Formula](./image/Trigonometric_Function/radian_formula.png)로 정의한다.
 
   * **호의 길이가 반지름의 길이와 같을 때** 그 **중심각의 크기는 1 rad**이다. (1 rad는 약 57.2958°이다.)
 
