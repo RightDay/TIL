@@ -12,11 +12,12 @@
 
 * 벡터의 덧셈은 **벡터를 하나씩 더한 것**과 같다.
 
-* 벡터의 덧셈 방법![vector(plus)](.//image/vector(plus).png)
+* 벡터의 덧셈 방법![vector(plus)](./image/Vector/vector(plus).png)
 
 > **벡터 합의 교환법칙**
 >
 > 임의의 벡터 A, B에 대하여, **A+B = B+A**
+
 
 
 ## 벡터의 뺄셈
@@ -25,7 +26,7 @@
 
 * 2 - 3 = -1인 것을 2 + (-3) = -1로 바꾼다고 생각하면 이해가 쉽다.
 
-* 벡터의 뺄셈 방법![vector(minus)](.//image/vector(minus).png)
+* 벡터의 뺄셈 방법![vector(minus)](./image/Vector/vector(minus).png)
 
 * **벡터 AB**에서 **벡터 AC를** 빼면 **C에서 B를 가리키는 벡터**를 알 수 있고, (AB - AC = CB)
 
@@ -115,10 +116,9 @@
 
 * ### 벡터의 내적의 활용
 
+	* 빛이나 컬링, 충돌 등의 계산에서 활용한다.
 
-    * 빛이나 컬링, 충돌 등의 계산에서 활용한다.
 
-  
 
 
 ## 벡터의 외적(Outer Product)
@@ -149,7 +149,7 @@
 	
 	
 	* 오른손 좌표계를 통한 외적
-	   ![cross](.//image/cross.png)
+	   ![cross](./image/Vector/cross.png)
 
 
 

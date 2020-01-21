@@ -10,7 +10,7 @@
 
 * ### 라디안(Radian)
   * 라디안
-    ![](./image/radian.png)
+    ![](./image/Trigonometric_Function/radian.png)
   * 각의 크기를 재는 SI 단위이다. 
   * 기호로는 rad(라디안)을 사용한다. 이를 **호도법**이라고 한다.
   * 부채꼴에서 호의 길이를 l, 반지름의 길이를 r이라고 하면 중심각의 크기 θ는 ![Radian Formula](./image/radian_formula.png)로 정의한다.
@@ -51,7 +51,7 @@
 
 * 사인 · 코사인 · 탄젠트 공식
 
-  ![](./image/triangle.png)
+  ![](./image/Trigonometric_Function/triangle.png)
 
 
 
@@ -65,7 +65,7 @@
 * ### 단위원 항등식
 
 	* 단위원
-	![](./image/circle.png)
+	![](./image/Trigonometric_Function/circle.png)
 	* 단위원은 **중심이 원점**이고 **반지름의 길이가 1인 원**으로 **단위원의 방정식은 x^2 + y^2 = 1**이다.
 	* 임의의 점 P를 통해 **빗변의 길이가 반지름의 길이**인 **직각삼각형**을 그릴 수 있다.
 	* P(x, y)는 **사인과 코사인 정의**에 의해 cosθ = x/1, sinθ = y/1이 된다. 따라서 **x = cosθ, y = sinθ**이다.

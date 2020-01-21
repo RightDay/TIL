@@ -148,9 +148,9 @@
   
     * 예) 두 2X2 행렬의 곱
   
-      임의의 두 행렬 A = ![matrix_a](./image/matrix_a.png) B = ![matrix_b](./image/matrix_b.png)에 대하여
+      임의의 두 행렬 A = ![matrix_a](./image/Matrix/matrix_a.png) B = ![matrix_b](./image/Matrix/matrix_b.png)에 대하여
   
-      AB = ![matrix_ab](./image/matrix_ab.png)
+      AB = ![matrix_ab](./image/Matrix/matrix_ab.png)
   
   * 행렬 곱 AB에 대하여 **행렬 A의 열의 수**와 **행렬 B의 행의 수가 같아야 한다.**
   
@@ -188,17 +188,18 @@
 * ### 벡터와 행렬의 곱
 
   * 벡터와 행렬의 곱은 **1×3 행벡터와 3×3 행렬의 곱셈**을 한 것과 같다.
-  * 임의의 벡터 v = ![vector_xyz](./image/Vector_xyz.png)와 행렬 A = ![matrix3x3](./image/Matrix3x3.png)는 **선형결합(Linear Combination)**을 통해 다음과 같이 나타낼 수 있다.
-    * ![LinearCombination](./image/LinearCombination.png)
+  * 임의의 벡터 v = ![vector_xyz](./image/Matrix/Vector_xyz.png)와 행렬 A = ![matrix3x3](./image/Matrix/Matrix3x3.png)는 **선형결합(Linear Combination)**을 통해 다음과 같이 나타낼 수 있다.
+    * ![LinearCombination](./image/Matrix/LinearCombination.png)
 
 
 
 ## 행렬식(Determinant)
 
 * 정방행렬에 실수를 대응 시키는 함수이다.
+
 * 행렬의 역을 구할때 사용된다.
 
-* ### 소행렬식
+* ### 소행렬식(Minor)
 
   * 임의의 행렬 A에서 i번째 행과 j번째 열을 제거 시켜 구성되는 (n-1)차 정방행렬
-    * ![matrix_determin1](./image/matrix_determin1.png)인 행렬에서 원소 a_11의 소행렬식은 ![matrix_determin2](./image/matrix_determin2.png)이다.
+    * ![matrix_determin1](./image/Matrix/matrix_determin1.jpg)인 행렬에서 원소 a_11의 소행렬식은 ![matrix_determin2](./image/Matrix/matrix_determin2.png)이다.
