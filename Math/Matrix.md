@@ -59,9 +59,11 @@
   
   * 행렬을 대각선 성분에 대해 대칭 이동한 행렬이다.
   
-  * m×n행렬의 전치행렬은 nxm행렬이 된다.
+  * m × n행렬의 전치행렬은 n x m행렬이 된다.
   
   * 행을 열로 자리바꿈하거나 열을 행으로 자리바꿈한 행렬이다.
+  
+  * 기호는 ![TransposMatrix](./image/Matrix/TransposMatrix.png)이다.
 
 
 
@@ -188,7 +190,7 @@
 * ### 벡터와 행렬의 곱
 
   * 벡터와 행렬의 곱은 **1×3 행벡터와 3×3 행렬의 곱셈**을 한 것과 같다.
-  * 임의의 벡터 v = ![vector_xyz](./image/Matrix/Vector_xyz.png)와 행렬 A = ![matrix3x3](./image/Matrix/Matrix3x3.png)는 **선형결합(Linear Combination)**을 통해 다음과 같이 나타낼 수 있다.
+  * 임의의 벡터 v = ![vector_xyz](./image/Matrix/Vector_xyz.png)와 행렬 A = ![matrix3x3](./image/Matrix/Matrix3x3.png)는 선형결합(Linear Combination)을 통해 다음과 같이 나타낼 수 있다.
     * ![LinearCombination](./image/Matrix/LinearCombination.png)
 
 
@@ -215,9 +217,13 @@
 
   * n차 정방행렬 A에 대해 **A의 여인수 행렬의 전치행렬**이다.
   
-  * ![minor1](./image/Matrix/minor1.png)에 대해서 ![Adjoing Matrix1](./image/Matrix/Adjoing Matrix1.jpg)
+  * 임의의 행렬 ![minor1](./image/Matrix/minor1.png)에 대해서 
   
-    ![Adjoing Matrix2](./image/Matrix/Adjoing Matrix2.jpg) ![Adjoing Matrix3](./image/Matrix/Adjoing Matrix3.jpg)
+    ![Adjoing Matrix1](./image/Matrix/Adjoing Matrix1.jpg)
+    
+    ![Adjoing Matrix2](./image/Matrix/Adjoing Matrix2.jpg)
+    
+    ![Adjoing Matrix3](./image/Matrix/Adjoing Matrix3.jpg)
 
 
 
