@@ -1,4 +1,4 @@
-# 행렬(Matrix)
+#  행렬(Matrix)
 
 * 행(Row) + 열(Column)로 가로와 세로로 나열된 수의 집합이다.
 * **벡터의 확장**이라고 볼 수 있으며, 벡터가 하나의 행 내지는 열만을 표현하는 데 비해 행렬은 **행 벡터들로 행을 구성**하거나 **열 벡터들로 열을 구성**하여 만들 수 있다.
@@ -203,21 +203,21 @@
 
 * ### 소행렬식(Minor)
 
-  * 임의의 행렬 A에서 i번째 행과 j번째 열을 제거 시켜 구성되는 (n-1)차 정방행렬
+  * 임의의 행렬 A에서 **i번째 행과 j번째 열을 제거 시켜 구성되는 (n-1)차 정방행렬**이다.
     * ![minor1](./image/Matrix/minor1.png)인 행렬에서 원소 a_11의 소행렬식은 ![minor2](./image/Matrix/minor2.png)이다.
   
 * ### 여인수(Cofactor)
 
-  * 임의의 행렬 A로부터 만들어지는 소행렬식에 적당한 부호를 붙인 값이다.
+  * 임의의 행렬 A로부터 만들어지는 **소행렬식에 적당한 부호를 붙인 값**이다.
     * ![Cofactor](./image/Matrix/Cofactor.png)
 
 * ### 수반행렬(Adjoing Matrix)
 
   * n차 정방행렬 A에 대해 **A의 여인수 행렬의 전치행렬**이다.
   
-  * ![minor1](./image/Matrix/minor1.png)에 대해서 ![Adjoing Matrix1](./image/Matrix/Adjoing Matrix1.png)
+  * ![minor1](./image/Matrix/minor1.png)에 대해서 ![Adjoing Matrix1](./image/Matrix/Adjoing Matrix1.jpg)
   
-    ![Adjoing Matrix2](./image/Matrix/Adjoing Matrix2.png)![Adjoing Matrix3](./image/Matrix/Adjoing Matrix3.png)
+    ![Adjoing Matrix2](./image/Matrix/Adjoing Matrix2.jpg) ![Adjoing Matrix3](./image/Matrix/Adjoing Matrix3.jpg)
 
 
 
