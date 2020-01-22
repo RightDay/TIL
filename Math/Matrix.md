@@ -199,7 +199,27 @@
 
 * 행렬의 역을 구할때 사용된다.
 
+* ![matrix_determin1](./image/Matrix/matrix_determin1.jpg)또는  ![matrix_determin2](./image/Matrix/matrix_determin2.png)
+
 * ### 소행렬식(Minor)
 
   * 임의의 행렬 A에서 i번째 행과 j번째 열을 제거 시켜 구성되는 (n-1)차 정방행렬
-    * ![matrix_determin1](./image/Matrix/matrix_determin1.jpg)인 행렬에서 원소 a_11의 소행렬식은 ![matrix_determin2](./image/Matrix/matrix_determin2.png)이다.
+    * ![minor1](./image/Matrix/minor1.png)인 행렬에서 원소 a_11의 소행렬식은 ![minor2](./image/Matrix/minor2.png)이다.
+  
+* ### 여인수(Cofactor)
+
+  * 임의의 행렬 A로부터 만들어지는 소행렬식에 적당한 부호를 붙인 값이다.
+    * ![Cofactor](./image/Matrix/Cofactor.png)
+
+* ### 수반행렬(Adjoing Matrix)
+
+  * n차 정방행렬 A에 대해 **A의 여인수 행렬의 전치행렬**이다.
+  
+  * ![minor1](./image/Matrix/minor1.png)에 대해서 ![Adjoing Matrix1](./image/Matrix/Adjoing Matrix1.png)
+  
+    ![Adjoing Matrix2](./image/Matrix/Adjoing Matrix2.png)![Adjoing Matrix3](./image/Matrix/Adjoing Matrix3.png)
+
+
+
+## 역행렬(Inverse Matrix)
+
