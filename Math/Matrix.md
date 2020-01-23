@@ -213,19 +213,23 @@
   * 임의의 행렬 A로부터 만들어지는 **소행렬식에 적당한 부호를 붙인 값**이다.
     * ![Cofactor](./image/Matrix/Cofactor.png)
 
-* ### 수반행렬(Adjoing Matrix)
+* ### 수반행렬(Adjoint Matrix)
 
   * n차 정방행렬 A에 대해 **A의 여인수 행렬의 전치행렬**이다.
   
   * 임의의 행렬 ![minor1](./image/Matrix/minor1.png)에 대해서 
   
-    ![Adjoing Matrix1](./image/Matrix/Adjoing Matrix1.jpg)
+    ![Adjoint_Matrix](./image/Matrix/Adjoint_Matrix.png)
     
-    ![Adjoing Matrix2](./image/Matrix/Adjoing Matrix2.jpg)
     
-    ![Adjoing Matrix3](./image/Matrix/Adjoing Matrix3.jpg)
 
 
 
 ## 역행렬(Inverse Matrix)
+
+* 행렬 A의 역행렬은 **A와 곱해서 단위행렬 E가 나오는 행렬**을 A의 역행렬이라고 한다.
+
+* 행렬 A의 수반행렬(Adjoint Matrix)를 adjA라고 하고, 그 행렬식(Determinant)을 detA라고 할 때
+
+  ![Inverse_Matrix](./image/Matrix/Inverse_Matrix.png)
 
