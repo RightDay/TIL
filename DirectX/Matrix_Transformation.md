@@ -18,7 +18,23 @@
     * x, y, z : x, y, z축으로 이동할 수치
     * 이동 벡터 **p의 부호를 바꾸는 것**으로 **이동행렬의 역행렬**을 얻을 수 있다.
 
-* ## 크기 행렬
-
 * ## 회전 행렬
+
+  * 정해진 축을 기준으로 라디안 값만큼 회전 시킬 수 있는 행렬이다.
+
+  * D3DXMATRIX* D3DXMatrixRotationX(D3DXMATRIX * pOut, Float Angle)
+
+    * ![D3DXMatrixRotationX](./image/D3DXMatrixRotationX.png)
+
+  * D3DXMATRIX* D3DXMatrixRotationY(D3DXMATRIX * pOut, Float Angle)
+
+    * ![D3DXMatrixRotationY](./image/D3DXMatrixRotationY.png)
+
+  * D3DXMATRIX* D3DXMatrixRotationZ(D3DXMATRIX * pOut, Float Angle)
+
+    * ![D3DXMatrixRotationZ](./image/D3DXMatrixRotationZ.png)
+
+    
+
+* ## 크기 행렬
 
