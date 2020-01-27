@@ -6,9 +6,9 @@
 
 * 3차원 벡터를 4차원 벡터로 변환시켜주기 위해서는 **마지막 성분(w)에 대한 처리**가 필요하다.
 
-  * **벡터를 포인터**로서 활용하기 위해서는 w = 1**(이동이 가능)**
-  * **벡터로서 활용**하기 위해서는 w = 0**(이동이 불가능)**
-  * 이렇게 필요에 따라 변환된 4D벡터를 3D 벡터의 **동치벡터(equivalent vector)**라고 한다.
+  * **벡터를 포인터**로서 활용하기 위해서는 w = 1 **(이동이 가능) **
+  * **벡터로서 활용**하기 위해서는 w = 0 **(이동이 불가능) **
+  * 이렇게 필요에 따라 변환된 4D벡터를 3D 벡터의 **동치벡터(equivalent vector) **라고 한다.
 
 * ## 이동 행렬(Translation Matrix)
 
@@ -38,3 +38,6 @@
 
 * ## 크기 행렬
 
+  * 정해진 축을 기준으로 스칼라 값만큼 크기를 변경 시킬 수 있는 행렬이다.
+  * D3DXMATRIX* D3DXMatrixScaling(D3DXMATRIX * pOut, FLOAT sx, FLOAT sy, FLOAT sz);
+    * ![D3DXMatrixScaling](./image/D3DXMatrixScaling.png)
