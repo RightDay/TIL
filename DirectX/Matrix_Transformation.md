@@ -40,4 +40,15 @@
 
   * 정해진 축을 기준으로 스칼라 값만큼 크기를 변경 시킬 수 있는 행렬이다.
   * D3DXMATRIX* D3DXMatrixScaling(D3DXMATRIX * pOut, FLOAT sx, FLOAT sy, FLOAT sz);
+    
     * ![D3DXMatrixScaling](./image/D3DXMatrixScaling.png)
+    
+      
+
+* ## 벡터 변환 함수
+
+  * 벡터에 행렬을 곱해서 행렬이 적용된 포인트 또는 벡터를 반환해주는 함수이다.
+  * 마지막 성분(w)이 1인 포인트로 변환해 주는 함수
+    * D3DXVECTOR3* D3DXVec3TransformCoord(D3DXVECTOR3* pOut, CONST D3DXVECTOR3 * pV, CONST D3DXMATRIX* pM);
+  * 마지막 성분(w)이 0인 포인트로 변환해 주는 함수
+    * D3DXVECTOR3* D3DXVec3TransformNormal(D3DXVECTOR3* pOut, CONST D3DXVECTOR3 * pV, CONST D3DXMATRIX* pM);
