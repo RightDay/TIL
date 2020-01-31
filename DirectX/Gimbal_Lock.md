@@ -1,4 +1,17 @@
-# D3DXMatrixRotationYawPitchRoll
+* # 짐벌락 현상 (Gimbal Lock)
+
+* 짐벌(Gimbal)
+  * ![gimbal](./image/Gimbal_Lock/gimbal.gif)
+  * 물체가 회전하도록 중심축을 가진 구조물이다.
+  * 3차원 공간에서는 오일러 각도를 사용하여 세 번의  회전을 통해 얻는다.
+* 오일러 각(Euler Angle)
+  
+  * 3차원 공간에서 각 x, y, z 축의 회전량을 정해진 순서 대로 적용했을 때 물체의 모든 방향을 표현할 수 있는 방법이다.
+* 짐벌락(Gimbal Lock)
+
+
+
+* # D3DXMatrixRotationYawPitchRoll
 
 * D3DXMatrixRotationYawPitchRoll(
 
@@ -12,7 +25,7 @@
 
   );
 
-![YawPitchRoll](./image/YawPitchRoll.png)
+  ![YawPitchRoll](./image/YawPitchRoll.png)
 
 * ### Yaw(Vertical axis)
 
