@@ -21,19 +21,19 @@
   * z, x, y 순의 회전하여 짐벌락 현상을 최소화할 수 있다.
 
   * ```cpp
-D3DXMatrixRotationYawPitchRoll(
-    	D3DXMATRIX * pOut,  //회전이 되어 나오는 행렬
-			FLOAT Yaw,			//y축으로 radian 값만큼 회전한다.
+    D3DXMatrixRotationYawPitchRoll(
+  		D3DXMATRIX * pOut,  //회전이 되어 나오는 행렬
+    	FLOAT Yaw,			//y축으로 radian 값만큼 회전한다.
     	FLOAT Pitch,		//x축으로 radian 값만큼 회전한다.
-			FLOAT Roll			//z축으로 radian 값만큼 회전한다.
+  		FLOAT Roll			//z축으로 radian 값만큼 회전한다.
     );
     ```
-
+  
   
   ![YawPitchRoll](./image/YawPitchRoll.png)
-
+  
   * ### Yaw(Vertical axis)
-
+  
     * 물체의 바닥을 향하는 축이다.
   
     * 물체를 오른쪽으로 회전시키는 것이 양의 방향으로 움직인 것이다.
@@ -66,8 +66,8 @@ D3DXMatrixRotationYawPitchRoll(
 
   *  ### D3DXQUATERNION
 
-    *  ```cpp
-    typedef struct D3DXQUATERNION{
+    * ```cpp
+      typedef struct D3DXQUATERNION{
           FLOAT x;
           FLOAT y;
           FLOAT z;
@@ -78,12 +78,13 @@ D3DXMatrixRotationYawPitchRoll(
     * ```cpp
       D3DXQUATERNION q;
       D3DXQuaternionIdentity(q);	//단위 쿼터니온(x, y, z, w) = (0, 0, 0, 1) 반환
-      
+            
       q.x = sin(theta/2) * axis.x
-    q.y = sin(theta/2) * axis.y
+      q.y = sin(theta/2) * axis.y
       q.z = sin(theta/2) * axis.z
-  q.w = cos(theta/2)
+      q.w = cos(theta/2)
       ```
+    
     
       * 벡터를 정의하는 [x, y, z]의 값에 제 4의 성분을 추가해, 임의의 4D 벡터를 생성한다.
     
@@ -99,7 +100,7 @@ D3DXMatrixRotationYawPitchRoll(
       	FLOAT Angle				
       );
       ```
-      
+    
   * Angle : 회전의 각도(라디안 단위). 회전축을 중심으로 원점 방향을 향한 시계회전으로 측정한 값
     
   * 지정된 축을 회전축으로서 회전한 D3DXQUATERNION 구조체의 포인터를 반환한다.
