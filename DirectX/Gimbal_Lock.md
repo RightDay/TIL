@@ -66,31 +66,30 @@
 
   *  ### D3DXQUATERNION
 
-    * ```cpp
-      typedef struct D3DXQUATERNION{
-          FLOAT x;
-          FLOAT y;
-          FLOAT z;
-          FLOAT w;
-      } D3DXQUATERNION;
-      ```
-      
-    * ```cpp
-      D3DXQUATERNION q;
-      D3DXQuaternionIdentity(q);	//단위 쿼터니온(x, y, z, w) = (0, 0, 0, 1) 반환
-            
-      q.x = sin(theta/2) * axis.x
-      q.y = sin(theta/2) * axis.y
-      q.z = sin(theta/2) * axis.z
-      q.w = cos(theta/2)
-      ```
-    
-    
-      * 벡터를 정의하는 [x, y, z]의 값에 제 4의 성분을 추가해, 임의의 4D 벡터를 생성한다.
-    
-      * 정규화한 쿼터니온의 각 성분이 축/각도의 회전에 어떻게 관계하고 있는지 나타낸다.
-    
+		* ```cpp
+	      typedef struct D3DXQUATERNION{
+          	FLOAT x;
+          	FLOAT y;
+          	FLOAT z;
+          	FLOAT w;
+	      } D3DXQUATERNION;
+	      ```
         
+		* ```cpp
+	      D3DXQUATERNION q;
+	      D3DXQuaternionIdentity(q);	//단위 쿼터니온(x, y, z, w) = (0, 0, 0, 1) 반환
+            
+	      q.x = sin(theta/2) * axis.x
+	      q.y = sin(theta/2) * axis.y
+	      q.z = sin(theta/2) * axis.z
+	      q.w = cos(theta/2)
+	      ```
+    
+	* 벡터를 정의하는 [x, y, z]의 값에 제 4의 성분을 추가해, 임의의 4D 벡터를 생성한다.
+    
+	* 정규화한 쿼터니온의 각 성분이 축/각도의 회전에 어떻게 관계하고 있는지 나타낸다.
+    
+    ​    
     
   * ### D3DXQuaternionRotationAxis
     * ```cpp
