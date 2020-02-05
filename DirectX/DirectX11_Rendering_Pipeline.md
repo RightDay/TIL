@@ -4,7 +4,7 @@
 
 3D 세계에 대한 기하학적 표현과 이 세계를 바라보는 관점을 정의하는 가상 카메라를 이용해 2D 이미지를 만들어내는 과정이다.
 
-![Rendering_Pipeline](./image/DirectX-11-Rendering-Pipeline.png)
+![Rendering_Pipeline](./image/DirectX11_Rendering_Pipeline/DirectX-11-Rendering-Pipeline.png)
 
 
 
@@ -14,7 +14,7 @@
 
 
 
-## 입력 조립기(Input Assembler)
+## 입력 조립기(Input Assembler Stage)
 
 * 렌더링 파이프라인의 첫번째 단계로, **사용자 정의 정점 및 인덱스 버퍼에서 기본 데이터를 읽어서 기하학적 기본요소(line lists, triangle strips 등)로 조립하는 것**이다. 
 
@@ -22,7 +22,7 @@
 
 
 
-## 정점 셰이더(Vertex Shader)
+## 정점 셰이더(Vertex Shader Stage)
 
 * **입력 조립기 단계에서 입력 받은 자료의 정점들을 한 번에 하나 씩 처리하여 출력**한다.  화면에 그려질 모든 정점은 정점 셰이더를 거친다. 
 
@@ -42,12 +42,13 @@
 
 
 
-## 덮개 셰이더(Hull Shader)
+## 덮개 셰이더(Hull Shader Stage)
 
 * 정점 셰이더에서 입력 받은 기본 도형들을 받아 두 가지 작업을 수행한다. 
-
+  * Hull-Main Shader : 폴리곤을 어떻게 분할할 것 인지
+  * Hull-Constant Shader : 폴리곤을 얼마나 분할할 것인지
+  * ![Hull_Shader](./image/DirectX11_Rendering_Pipeline/Hull_Shader.png)
 * 첫 번째 작업은 **각 기본 도형을 효율적으로 많은 삼각형으로 나눠 테셀레이션 계수들을 결정**한다. 이 계수들은 이후 과정에서 해당 기본 도형을 얼마나 세밀하게 분할해야 하는지 파악하는데 쓰인다. 
-
 * 두 번째 작업은  바람직한 출력 제어 패치 구성의 각 제어점마다 실행되는 것으로, 여기서 덮개 셰이더는 이후 **영역 셰이더(Domain Shader)에서 기본도형을 실제로 분할하는 데 사용할 제어 점들을 만든다.**
 
 
@@ -62,7 +63,7 @@
 
 
 
-## 영역 셰이더(Domain Shader)
+## 영역 셰이더(Domain Shader Stage)
 
 * **무게 중심 좌표(Barycentric Coordinates)들과 덮개 셰이더가 생성한 제어점들을 입력으로 받아서 새 정점들을 생성**한다. 이 단계에서 현재 기본 도형에 대해 생성된 제어점들 전체와 텍스쳐, 절차적 알고리즘 등을 이용해서, 테셀레이션 된 각 점마다 무게중심 '위치'들을 출력 기하구조(geometry)로 변환해서 다음 단계로 넘겨준다. 
 
@@ -70,7 +71,7 @@
 
 
 
-## 기하 셰이더(Geometry Shader)
+## 기하 셰이더(Geometry Shader Stage)
 
 * **하나의 온전한 기본 도형을 입력 받아서 임의로 변형**한다. 정점 셰이더의 처리를 거친 정점을 가지고 기하구조를 생성하거나 파괴할 수 있다.(입력 기본 도형을 다른 여러 기본 도형들로 확장, 특정 조건에 따라 입력된 기본도형을 출력하지 않고 폐기 등)
 
@@ -96,7 +97,7 @@
 
 
 
-## 픽셀 셰이더(Pixel Shader)
+## 픽셀 셰이더(Pixel Shader Stage)
 
 * **픽셀 단편(Pixel Fragment)마다 실행되며 보간된 정점 특성들을 입력받아서 하나의 색상을 출력**한다. 
 
@@ -104,7 +105,7 @@
 
 
 
-## 출력 병합기(Output Merger)
+## 출력 병합기(Output Merger Stage)
 
 * **픽셀 셰이더 출력을 파이프라인에 연결된 깊이/스텐실 자원 및 렌더 대상 자원에 제대로 합치는 작업**을 한다. 
 
