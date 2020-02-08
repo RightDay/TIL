@@ -1,5 +1,8 @@
 # 플린 분류 (Flynn's taxonomy)
 
+* 마이클 플린이 1996년에 제안한 컴퓨터 구조 분류이다.
+* 사용 가능한 동시 명령어 수 또는 데이터 스트림에 기초한다.
+
 * ## SISD(Single Instruction, Single Data stream)
 
   * ![SISD](./image/SISD.png)
