@@ -232,4 +232,6 @@
 * 행렬 A의 수반행렬(Adjoint Matrix)를 adjA라고 하고, 그 행렬식(Determinant)을 detA라고 할 때
 
   ![Inverse_Matrix](./image/Matrix/Inverse_Matrix.png)
+  
+* 시계 방향으로 이동한 오브젝트를 다시 반시계방향으로 이동하는 등 여러가지 용도로 사용된다.
 
