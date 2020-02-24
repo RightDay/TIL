@@ -69,4 +69,4 @@ int main()									//함수 머리
     
       * i는입력(input), o는 출력(output)을 나타낸다.
       * iostream 파일에는 C++의 몇 가지 입출력 기능이 정의되어 있다.
-      * <a> #include <iostream> </a>행이 iostream 파일의 내용으로 대체된다.
+      *  #include <iostream>행이 iostream 파일의 내용으로 대체된다.
