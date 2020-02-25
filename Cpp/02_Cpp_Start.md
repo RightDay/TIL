@@ -70,3 +70,49 @@ int main()									//함수 머리
       * i는입력(input), o는 출력(output)을 나타낸다.
       * iostream 파일에는 C++의 몇 가지 입출력 기능이 정의되어 있다.
       *  #include <iostream>행이 iostream 파일의 내용으로 대체된다.
+
+
+
+* ## 헤더 파일 이름
+
+  * iostream과 같은 파일을 **포함 파일(**다른 파일에 포함된다는 의미), 또는 **헤더 파일**(파일의 앞부분에 들어간다는 의미)이라고 부른다.
+  * C++ 헤더 파일은 .h 확장자를 사용하지 않는다.
+    * C 헤더 파일이 C++ 헤더 파일로 진화한 헤더 파일들은 .h 확장자를 빼고 이름의 앞부분에 c를 넣는다.
+      * ex) math.h -> cmath
+  * 이름공간(namespace) 기능을 포함한다.
+
+
+
+* ## 이름 공간(namespace)
+
+  * iostream.h 대신에 iostream을 사용할 때 프로그램이 iostream의 정의를 사용할 수 있게 하려면 다음과 같은 이름 공간 지시자를 사용해야 한다.
+
+    * ```cpp
+      using namespace std;
+      ```
+
+    * 이를 using 지시자(directive)라고 한다.
+
+  * 프로그램을 작성할 때 여러 소프트웨어 개발업체들이 제공하는 코드들을 사용할 수 있도록 도와준다.
+
+  * 두 업체의 제품을 사용해야 하고 두 제품 모두 wanda() 라는 함수가 들어 있을 때, 이를 이름 공간(namespace)이라는 하나의 단위로 포장하여 나타낼 수 있다.
+
+    * ex) Microsoft라는 회사가 만든 제품을 Microflop이라는 이름 공간으로 포장하여 그 회사의 wanda() 함수에 Microsoft::wanda()라는 이름을 사용한다.
+
+    * ex) Piscine 회사가 만든 wanda() 함수에 Piscine::wanda()라는 이름을 사용한다.
+
+    * ```cpp
+      Microsoft::wanda();	// Microsoft 이름 공간의 버전
+      Piscine::wanda();	// Piscine 이름 공간의 버전
+      ```
+
+  * 이러한 방식에 의해 C++ 컴파일러의 표준 구성 요소인 클래스, 함수, 변수는 std라는 이름 공간 안에 담겨진다.
+
+    * ex) iostream 헤더 파일 안에 정의되어 있는 cout 변수는 실제로는 std::cout으로 호출된다.
+
+      * 사용자는 using 지시자를 생략하고 다음과 같은 스타일로 코드를 작성할 수 있다.
+
+      * ```cpp
+        std::cout << "Hello World." << std::endl;
+        ```
+
