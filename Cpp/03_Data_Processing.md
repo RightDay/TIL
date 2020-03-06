@@ -158,3 +158,16 @@
           wchar_t bob = L'P';	//확장 문자 상수
           wcout << L"tall" << endl;	//확장 문자 문자열의 출력
           ```
+  
+  
+  
+  * ### bool형
+  
+    * 참이나 거짓 중 어느 한 가지 값을 가진다.
+  
+    * C++는 0이 아닌 값을 참, 0인 값을 거짓으로 해석한다.
+  
+    * ```cpp
+      bool start = -100;	//start에 true가 대입된다.
+      bool stop = 0;		//stop에 false가 대입된다.
+      ```
