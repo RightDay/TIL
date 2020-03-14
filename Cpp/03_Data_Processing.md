@@ -451,4 +451,42 @@
           * 데이터형 변환자는 변수 자체는 변경하지 않고, 지시된 데이터형의 새로운 값을 만든다.
       
         * 부동 소수점수들을 정수값으로 모델링해야 하는 계산이나, char형의 ASCII 코드 값 출력 등에 사용한다.
+        
+      * #### C++11에서의 auto 선언
+      
+        * C++11은 초기화하는 값을 보고 변수형을 추론할 수 있다.
+      
+        * 초기화 선언시 데이터형을 쓰지 않고 auto를 사용할 수 있다.
+      
+          * ```cpp
+            auto n = 100;	// n은 int
+            auto x = 1.5;	// x는 double
+            auto y = 1.3e12L;	//y는 long double
+            ```
+      
+        * 자동으로 데이터형을 추론하는 것은 안 좋은 습관을 가질 수 있게 한다.
+      
+          * x, y, z가 모두 double형이라고 가정했을 때,
+      
+          * ```cpp
+            auto x = 0.0;	// 0.0이 double이기 때문에 문제가 없음
+            double y = 0;	// 0이 자동으로 0.0으로 변환되기 때문에 문제가 없음
+            auto z = 0;	// 0이 int이기 때문에, z가 int가 되어 문제가 생김
+            ```
+      
+        * STL(Standard Template Library)을 사용할 때와 같이 복잡한 변수형을 다룰 때 유용하다.
+      
+          * C++98에서 작성된 코드
+      
+            * ```cpp
+              std::vector<double> scores;
+              std::vector<double>::iterator pv = scores.begin();
+              ```
+      
+          * C++11에서 작성된 코드
+      
+            * ```cpp
+              std::vector<double> scores;
+              auto pv = scores.begin();
+              ```
 
