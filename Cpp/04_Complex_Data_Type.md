@@ -281,3 +281,88 @@
         - ```cpp
           (cin >> year).get();	//또는 (cin >> year).get(ch);
           ```
+
+
+
+- ## string 클래스
+
+  - 문자열을 저장하는 데 문자 배열을 사용하는 대신에, string형 변수(또는 객체)를 사용한다.
+
+  - string 헤더 파일을 포함시켜 사용한다.
+
+  - 여러 면에서 string 객체를 문자 배열과 동일한 방식으로 사용할 수 있다.
+
+    - C 스타일 문자열로 string 객체를 초기화할 수 있다.
+    - cin을 사용하여 string 객체에 키보드 입력을 저장할 수 있다.
+    - cout을 사용하여 string 객체를 디스플레이할 수 있다.
+    - 배열 표기를 사용하여 string 객체에 저장되어 있는 개별적인 문자들에 접근할 수 있다.
+
+  - ```cpp
+    string str1;	//빈 string 객체를 생성한다.
+    string str2 = "panther";	//초기화된 string 객체를 생성한다.
+    ```
+
+    - str1 선언은 길이가 0인 string 객체를 생성한다.
+
+    - ```cpp
+      cin >> str1;	//str1은 입력에 맞게 크기가 조절된다.
+      ```
+
+    - 입력을 읽어 str1에 넣을 때 str1의 크기를 자동으로 조절한다.
+
+  - ### C++11 문자열 초기화
+
+    - 문자열과 문자열 객체에 리스트 초기화를 가능케 해준다.
+
+    - ```cpp
+      char first_date [] = {"Le Chapon Dobu"};
+      string second_date [] = {"The Bread Bowl"};
+      ```
+
+  - ### 대입, 결합, 추가
+
+    - string 클래스는 배열보다 조작이 간단하다.
+
+      - string 객체를 다른 string 객체에 간단하게 대입할 수 있다.
+
+      - ```cpp
+        char charr1[20];	//빈 배열을 생성한다.
+        char charr2[20] = "jaguar";	//초기화된 배열을 생성한다.
+        string str1;	//빈 string 객체를 생성한다.
+        string str2 = "panther";	//초기화된 string 객체를 생성한다.
+        charr1 = charr2;	//틀리다, 배열 대입 no
+        str1 = str2;	//맞다, 객체 대입 ok
+        ```
+
+    - string 클래스는 문자열 결합과 추가를 간단하게 처리한다.
+
+      - \+연산자를 사용하여 두 개의 string 객체를 하나로 결합할 수 있다.
+
+      - += 연산자를 사용하여 기존의 string 객체의 끝에 또 다른 string 객체를 덧붙일 수 있다.
+
+      - ```cpp
+        string str3;
+        str3 = str1 + str2;	//결합된 두 string 객체를 str3에 대입한다.
+        str1 += str2;	//str1의 끝에 str2를 추가한다.
+        ```
+
+  - ### 다른 형태의 문자열 상수
+
+    - C++은 char형 이외에도 wchar_t형이 있고, C++11에는 char16_t와 char32_t를 추가로 가지고 있다.
+
+      - 이러한 형들의 배열과 문자열 상수가 가능하다.
+
+      - C++은 문자열 상수를 초기화하기 위해 L, u, U의 접두사를 가지고 있다.
+
+        - ```cpp
+          wchar_t title[] = L"Chief Astrogator";	//w_char 문자열
+          char16_t name[] = u"Felonia Ripova";	//char_16 문자열
+          char32_t car[] = U"Humber Super Snipe";	//char_32 문자열
+          ```
+
+    - C++11은 raw 문자열을 지원한다.
+
+      - raw 문자열에 있어서 문자들은 독립적으로 존재한다.
+      - R의 접두사를 가지고 있다.
+      - ex) \n이 newline 문자가 아닌 backslash와 n이라는 두개의 문자로 인식된다. 
+
