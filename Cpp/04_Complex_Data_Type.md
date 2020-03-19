@@ -533,3 +533,127 @@
         if (tr.goodIn)
         ...
         ```
+
+
+
+* ## 공용체(union)
+
+  * 서로 다른 데이터형을 한 번에 한 가지만 보고나할 수 있는 데이터 형식이다.
+
+  * 구조체와 달리 공용체는 데이터형 중에 한 번에 어느 하나만 보관할 수 있다.
+
+  * ```cpp
+    union one4all
+    {
+        int int_val;
+        long long_val;
+        double double_val;
+    };
+    
+    one4all pail;
+    pail.int_val = 15;	//int형을 저장
+    cout << pai.int_val;
+    pail.double_val = 1.38;	//double형을 저장, int형 값은 소실
+    cout << pail.double_val;
+    ```
+
+  * 공용체의 크기는 가장 큰 멤버의 크기가 된다.
+
+  * 여러 가지 데이터형을 사용할 수는 있지만 이들을 동시에 사용할 수없을 때, 공용체를 사용하면 메모리를 절약할 수 있다.
+
+
+
+* ## 열거체(enumeration)
+
+  * const를 사용하여 기호 상수를 만드는 것에 대한 또 다른 방편을 제공한다.
+
+  * 제한적이기는 하지만 새로운 데이터형을 정의할 수 있게 해준다.
+
+  * ```cpp
+    enum spectrum {red, orange, yellow, green, blue, violet, indigo, ultraviolet};
+    ```
+
+    * spectrum을 새로운 데이터형의 이름으로 만든다. enum형 변수를 열거체(enumeration)이라 부른다.
+    * red, orange, yello ... 등을 0에서 7까지의 정수 값을 각각 나타내는 기호 상수로 만든다. 이 상수들을 열거자(enumerator)라 부른다.
+
+  * 기본적으로 첫 번째 열거자에 0이 대입되고, 두 번째 열거자에 1이 대입되는 방식이다.
+
+  * 열거체의 이름을 사용하여 열거형의 변수를 선언할 수 있다.
+
+    * ```cpp
+      spectrum band;	//band는 spectrum형의 변수
+      ```
+
+  * 열거체의 변수에는 데이터형을 정의하는 데 사용된 열거자 값들만 대입할 수 있다.
+
+    * ```cpp
+      band = blue;	//맞다, blue는 열거자이다.
+      band = 2000;	//틀리다, 2000은 열거자가 아니다.
+      ```
+
+  * 열거체는 대입 연산자만 사용하도록 정의되어 있다. (산술 연산 허용 X)
+
+    * ```cpp
+      band = oragne;	//맞다.
+      ++band;	//틀리다.
+      band = orange + red;	//틀리다.
+      ```
+
+  * 열거자들은 정수형이며 int형으로 승급될 수 있다. 그러나 int형이 자동으로 열거체로 변환되지는 않는다.
+
+    * ```cpp
+      int color = blue;	//맞다, spectrum형이 int형으로 승급된다.
+      band = 3;	//틀리다, int형이 spectrum형으로 변환되지 않는다.
+      color = 3 + red;	//맞다, red가 int형으로 변환된다.
+      ```
+
+  * 명시적인 데이터형 변환을 사용하면, int형 값을 열거체 변수에 대입할 수 있다.
+
+    * ```cpp
+      band = spectrum(3);	//3을 spectrum형으로 데이터형 변환
+      ```
+
+  * 상수만 사용할 계획이고 열거체 변수를 만들 생각이 없다면 열거체 이름을 생략할 수 있다.
+
+    * ```cpp
+      enum {red, orange, yellow, green, blue, violet, indigo, ultraviolet};
+      ```
+
+  * ### 열거자 값의 설정
+
+    * 대입 연산자를 사용하여 열거자의 값을 명시적으로 지정할 수 있다.
+
+      * ```cpp
+        enum bits {one = 1, two = 2, four = 4, eight = 8};
+        ```
+
+      * 이때 대입되는 값들은 정수여야 한다.
+
+    * 일부 열거자에만 명시적으로 값을 대입할 수 있다.
+    
+      * ```cpp
+        enum bigstep (first, second = 100, third);
+        ```
+    
+      * 이러한 경우, first는 기본적으로 0이고, 뒤에 오는 초기화하지 않은 열거자들은 바로 앞의 열거자보다 1만큼 크다. 그래서 thrird는 101이 된다.
+    
+    * 하나 이상의 열거자들이 같은 값을 가질 수 있다.
+    
+      * ```cpp
+        enum {zero, null = 0, one, numero_uno = 1};
+        ```
+    
+      * zero와 null이 0이고, one, numero_uno가 1이다.
+    
+  * ### 열거체의 값 범위
+
+    * 각 열거체는 값 범위를 가진다.
+
+    * 어떤 정수값이 그 범위 안에 들어 있으면, 그것이 열거자 값이 아니더라도 데이터형 변환을 통하여 열거체 변수에 대입할 수 있다.
+
+      * ```cpp
+        enum bits {one = 1, two = 2, four = 4, eight = 8};
+        bits myflag;
+        
+        myflag = bits(6);	//맞다, 6이 bits 범위 안에 들어 있다.
+        ```
