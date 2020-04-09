@@ -187,4 +187,99 @@
       - const를 사용하면, 실수로 **데이터 변경을 일으키는 프로그래밍 에러를 막을 수 있다.**
       - 원형에 const를 사용하면, 함수가 const와 const가 아닌 실제 매개변수를 모두 처리할 수 있지만, **원형에 const를 생략한 함수는 const가 아닌 데이터만 처리할 수 있다.**
       - const 참조를 사용하면, 함수가 **자신의 필요에 따라 임시 변수를 생성하여 사용**할 수 있다.
+    
+  - ### 구조체에 대한 참조
+  
+    - 기본 데이터형의 변수에 대한 참조를 선언할 때와 마찬가지로 구조체 매개변수를 선언할 때 참조 연산자 &를 앞에 붙이면 된다.
+  
+      - ```cpp
+        struct free_throws
+        {
+            std::string name;
+            int made;
+            int attemps;
+            float percent;
+        };
+        ```
+  
+      - ```cpp
+        void set_pc(free_throws & ft);	//구조체에 대하여 참조를 사용한다.
+        void display(cost free_throws & ft);	//구조체에 대하여 변경을 허용하지 않는다.
+        free_throws & accumulate(free_throws & target, const free_throws & source);	//참조를 리턴한다.
+        ```
+  
+    - ### 참조 리턴
+  
+      - #### 참조를 리턴하는 이유
+  
+        - 보통의 리턴은 값을 기준으로 함수 매개변수를 통해 값을 전달하는 방식으로 동작한다.
+  
+          - 함수가 종료되면 리턴에 의해 그 값은 다시 호출한 함수로 전달된다.
+          - 이 값은 임시 장소에 복사되고 호출 프로그램은 이 값을 사용한다.
+  
+        - ```cpp
+          dub = accumulate(team, five);	//구조체를 리턴하는 함수
+          ```
+  
+          - 만약 accumulate()가 어떤 구조체에 대한 레퍼런스 대신에 구조체 자체를 리턴한다면, 전체 구조체를 임시 장소에 복사하고 그 복사한 것을 dup에 복사할 것이다.
+          - 그러나, 참조를 리턴으로 사용한 경우에는 team은 직접적으로 dup에 복사되기 때문에 보다 효율적인 방법이 될 수 있다.
+  
+      - 참조를 리턴하는 함수는 실제로 참조가 되는 변수에 대한 alias 파일이다.
+  
+      - #### 참조를 리턴할 때 주의할 점
+  
+        - 함수가 종료할 때 수명이 함께 끝나는 메모리 위치에 대한 참조를 리턴하지 않도록 해야한다.
+  
+        - ```cpp
+          const free_throws & clone2(freethrows & fit)
+          {
+              free_throws newguy;
+              newguy = ft;	//정보를 복사한다.
+              return newguy;	//복사본에 대한 참조를 리턴한다.
+          }
+          ```
+  
+          - 이 코드는 함수가 종료할 때 함께 사라질 운명인 임시 변수(new guy)에 대한 참조를 리턴하는 실수를 저지르고 있다.
+  
+            - 마찬가지로, 임시 변수를 지시하는 포인터를 리턴하는 것도 피해야 한다.
+  
+          - ##### 해결 방법
+  
+          - 함수에 매개변수로 전달된 참조를 리턴한다.
+  
+            - 참조 매개변수는 호출 함수가 사용하는 데이터를 참조하기 때문에, 리턴되는 참조도 동일한 그 데이터를 참조한다.
+  
+          - new를 사용하여 새로운 기억 공간을 만든다.
+  
+            - ```cpp
+              const free_throws & clone2(freethrows & fit)
+              {
+                  free_throws * pt;
+                  *pt = ft;	//정보를 복사한다.
+                  return *pt;	//복사본에 대한 참조를 리턴한다.
+              }
+              ```
+  
+              - 포인터 pt는 구조체를 지시하므로 *pt는 구조체이다.
+  
+              - 구조체를 리턴하는 것처럼 보이지만, 실제로는 구조체에 대한 참조를 리턴하는 것이다.
+  
+              - ```cpp
+                free_throws & jolly = clone(three)
+                ```
+  
+                - 이 구문은 jolly를 새로 만든 구조체에 대한 참조로 만든다.
+                - 이러한 접근은 메모리가 더 이상 필요 없게 되었을 때 new에 의해 대입된 메모리를 delete로 반드시 삭제해 주어야 한다.
+  
+        - #### 참조를 리턴할 때 const를 사용하는 이유
+  
+          - 리턴형이 const이면 변경 불가능한 lvalue가 된다.
+  
+            - 그러므로 대입이 허용되지 않는다.
+  
+            - ```cpp
+              const free_throws & accumulate(free_throws & target, const free_throws & source);
+              
+              accumulate(dup, five) = four;	//const 참조 리턴을 허용하지 않음
+              ```
 
