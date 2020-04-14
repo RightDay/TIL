@@ -303,25 +303,25 @@
       
       - **new를 사용하여 새로운 기억 공간을 만든다.**
       
-            - ```cpp
-              const free_throws & clone2(freethrows & fit)
-              {
-                  free_throws * pt;
-                *pt = ft;	//정보를 복사한다.
-                  return *pt;	//복사본에 대한 참조를 리턴한다.
-              }
-              ```
+        - ```cpp
+          const free_throws & clone2(freethrows & fit)
+          {
+             free_throws * pt;
+             *pt = ft;	//정보를 복사한다.
+             return *pt;	//복사본에 대한 참조를 리턴한다.
+          }
+          ```
       
     - 포인터 pt는 구조체를 지시하므로 *pt는 구조체이다.
       
     - 구조체를 리턴하는 것처럼 보이지만, 실제로는 구조체에 대한 참조를 리턴하는 것이다.
-            
-              - ```cpp
-                free_throws & jolly = clone(three)
-                ```
-              - 이 구문은 jolly를 새로 만든 구조체에 대한 참조로 만든다.
-              - 이러한 접근은 메모리가 더 이상 필요 없게 되었을 때 new에 의해 대입된 메모리를 delete로 반드시 삭제해 주어야 한다.
-          
+
+      - ```cpp
+        free_throws & jolly = clone(three)
+        ```
+        - 이 구문은 jolly를 새로 만든 구조체에 대한 참조로 만든다.
+        - 이러한 접근은 메모리가 더 이상 필요 없게 되었을 때 new에 의해 대입된 메모리를 delete로 반드시 삭제해 주어야 한다.
+      
     - #### 참조를 리턴할 때 const를 사용하는 이유
       
     - **리턴형이 const이면 변경 불가능한 lvalue가 된다.**
