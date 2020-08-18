@@ -42,3 +42,98 @@ district2 = sid.operator+(sara);
 ```
 
 그 함수는 합계를 계산하여 리턴하기 위해, sid 객체를 암시적으로 사용하고(메서드를 호출한 객체이므로), sara 객체를 명시적으로 사용한다(매개변수로 전달되었으므로).
+
+## 연산자 오버로딩 예제
+
+```cpp
+// mytime.h -- Time 클래스
+#ifndef MYTIMEO_H_
+#define MYTIMEO_H_
+
+class Time
+{
+private:
+    int hours;
+    int minutes;
+public:
+    Time();
+    Time(int h, int m = 0);
+    void AddMin(int m);
+    void AddHr(int h);
+    void Reset(int h = 0, int m = 0);
+    Time Operator+(const Time & t) const;
+    Time Sum(const Time & t) const;
+}
+```
+
+```cpp
+// mytime.cpp -- Time 클래스의 메서드 구현
+#include <iostream>
+#include "mytime1.h"
+
+Time::Time()
+{
+    hours = minutes = 0;
+}
+
+Time::Time(int h, int m)
+{
+    hours = h;
+    minutes = m;
+}
+
+void Time::AddMin(int m)
+{
+    minutes += m;
+    hours += minutes / 60;
+    minutes %= 60;
+}
+
+void Time::AddHr(int h)
+{
+    hours += h;
+}
+
+void Time::AddHr(int h)
+{
+    hours += h;
+}
+
+void Time::Reset(int h, int m)
+{
+    hours = h;
+    minutes = m;
+}
+
+Time Time::operator+(const Time & t) const
+{
+    Time sum;
+    sum.minutes = minutes + t.minutes;
+    sum.hours = hours + t.hours + sum.minutes / 60;
+    sum.minutes % = 60;
+    return sum;
+}
+
+void Time::Show() const
+{
+    std::cout << hours << "시간, " << minutes << "분";
+}
+```
+
+- operator+() 메서드 호출
+
+```cpp
+total = coding.operator+(fixing);	//함수 표기
+total = coding + fixing;	//연산자 표기
+```
+
+컴파일러는 피연산자의 데이터형을 판단하여 자기가 해야 할 일을 결정한다.
+
+- 두 개 이상의 객체들의 덧셈
+
+```cpp
+t4 = t1 + t2 + t3;
+t4 = t1.operator+(t2 + t3);	//덧셈 연산자가 왼쪽에서 오른쪽으로 결합하기 때문에 이와 같이 해석됨.
+t4 = t1.operator+(t2.operator+(t3));	//함수 매개변수 자체가 함수 호출로 해석됨.
+```
+
