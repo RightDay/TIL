@@ -233,9 +233,29 @@ cout << trip;
 ```CPP
 void operator<<(ostream & os, const Time & t)
 {
-    os << t.hours << "시간, " << t.minutes <<"분";
+    os << t.hours << "시간, " << t.minutes << "분";
 }
 ```
 
+클래스 선언에 있는 원형 앞에만 키워드 friend를 사용한다. 정의가 곧 원형인 경우를 제외하고, 함수 정의에는 키워드 friend를 사용하지 않는다.
 
+## 오버로딩 연산자: 멤버 함수와 멤버가 아닌 함수
+
+많은 연산자들에 대해서 연산자 오버로딩을 구현할 때, 멤버 함수로 구현할 것인지 멤버가 아닌 함수로 구현할 것인지를 선택해야 한다. 일반적으로는 멤버가 아닌 함수가, 클래스의 private 데이터에 직접 접근할 수 있는 프렌드 함수이다.
+
+```cpp
+//Time 클래스 선언에 다음과 같은 원형을 가지고 있다고 가정
+Time operator+(const Time & t) const;	//멤버 함수
+friend Time operator+(const Time & t1, const Time & t2);	//멤버 아닌 함수
+```
+
+두 원형 모두 Time형 객체의 T2 + T3 표현에 대해 바르게 동작한다.
+
+```cpp
+// 컴파일러는 다음과 같은 구문을
+T1 = T2 + T3;
+//다음 둘 중의 어느 하나로 변환할 수 있다.
+T1 = T2.operator+(T3);	//멤버 함수
+T1 = operator+(T2,T3);	//멤버가 아닌 함수
+```
 
